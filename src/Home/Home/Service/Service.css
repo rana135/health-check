@@ -1,8 +1,7 @@
 .service{
-    border: 1px solid gray;
     padding: 10px;
     border-radius: 10px;
-    margin: 10px;
+    margin: 15px;
 }
 .service:hover{
     transform: scale(1.1);
