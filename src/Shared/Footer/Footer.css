@@ -1,0 +1,13 @@
+ /* Footer part start */
+ footer{
+    background-color:rgba(100, 148, 237, 0.995);
+    height:auto;
+    width:auto;
+    text-align: center;
+    color:white;
+    position:sticky;
+    bottom:0;
+}
+.footvar{
+    font-size:18px;
+}

@@ -4,10 +4,10 @@ import titleName from '../../images/logo_w (1).png'
 
 const Header = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" sticky='top' bg="primary" variant="dark">
+        <Navbar collapseOnSelect expand="lg" sticky='top' bg="primary" variant="dark "  className=' d-flex align-items-center'>
             <Container>
                 <Navbar.Brand href="#home">
-                    <img className='mb-5 w-75' src={titleName} alt="" />
+                    <img className='w-50' src={titleName} alt="" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
