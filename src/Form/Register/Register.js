@@ -8,7 +8,9 @@ import Loading from '../../Shared/Loading/Loading';
 
 
 const Register = () => {
+    const [agree, setAgree] = useState(false);
     const [validated, setValidated] = useState(false);
+    const nameRef = useRef('')
     const emailRef = useRef('')
     const passwordRef = useRef('')
     const navigate = useNavigate();
@@ -17,7 +19,7 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
     const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
 
     let errorELement;
@@ -45,6 +47,8 @@ const Register = () => {
         setValidated(true);
         event.preventDefault();
 
+
+        const name = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         createUserWithEmailAndPassword(email, password)
@@ -59,6 +63,10 @@ const Register = () => {
             <h1 className='text-center text-primary'>Register</h1>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Your Name</Form.Label>
+                    <Form.Control ref={nameRef} type="text" placeholder="Enter Name" required />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
                 </Form.Group>
@@ -68,9 +76,11 @@ const Register = () => {
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                    <Form.Check onClick={()=> setAgree(!agree)} type="checkbox" label="Accept Genius Car Terms And Conditions" className={agree? "text-primary" : "text-danger"}/>
                 </Form.Group>
-                <Button style={{ height: "60px" }} className='btn btn-lg mx-auto d-block w-100' variant="primary" type="submit">
+                <Button
+                disabled = {!agree}
+                style={{ height: "60px" }} className='btn btn-lg mx-auto d-block w-100' variant="primary" type="submit">
                     Register
                 </Button>
             </Form>
