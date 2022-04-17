@@ -7,6 +7,7 @@ import Header from './Shared/Header/Header';
 import Footer from './Shared/Footer/Footer';
 import Login from './Form/Login/Login';
 import About from './About/About';
+import Blogs from './Blogs/Blogs';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About/>} />
         <Route path="*" element={<NotFound />} />
