@@ -14,7 +14,7 @@ const Footer = () => {
 
         <div className='footer-container'>
             <div className='footer-description'>
-                <div>
+                <div className='ms-3'>
                     <h3 className='text-info mt-3'>About Health Coach</h3>
                     <p>I understand very well how lack of confidence can be an obstacle. That is why I dedicated myself to helping people overcome their fears and improve their looks - and their lives.</p>
                 </div>
