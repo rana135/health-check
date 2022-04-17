@@ -1,0 +1,6 @@
+Form input{
+    height: 3.6rem;
+}
+input:hover{
+    border: 1px solid rgba(0, 0, 255, 0.652);
+}

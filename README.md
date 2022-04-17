@@ -1,9 +1,13 @@
-# Getting Started with Create React App
+# Project Name:- Health Coach.
+## [Netlify live server link](https://food-house-assignment.netlify.app/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
+## Project Description:-
+* This is basically a doctor's portfolio website
+* First there is the homepage where the header, banner, services, footer are shown.
+* Questions have been answered using accordion in blogs.
+* The main purpose of this project is to firebase
+* The basic idea of ​​user login and registration can be found from this project.
+## Tecnology use:- Firebase, react router, react router hooks, react bootstrap , react toastify, plain css etc.
 In the project directory, you can run:
 
 ### `npm start`
