@@ -1,5 +1,5 @@
 # Project Name:- Health Coach.
-## [Netlify live server link](https://food-house-assignment.netlify.app/).
+## [Netlify live server link](https://health-coach-assignment.netlify.app/).
 
 ## Project Description:-
 * This is basically a doctor's portfolio website
