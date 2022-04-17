@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "picture": "https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg?t=st=1649000580~exp=1649001180~hmac=2abf40646fc09d0657448a3f970bc7d18bfd7d189af2e06e3c393eaa71ece71b&w=740",
+      "reviews": "The best community doctor we have had since the time of Dr. Monistiem. He is very caring and concerned about his patients...great at the bedside of end of life patients....such compassion. A very special person in our community.",
+      "name": "Devin Walker",
+      "ratings": 5
+    },
+    {
+      "id": 2,
+      "picture": "https://img.freepik.com/free-photo/portrait-smiling-young-man-eyewear_171337-4842.jpg?t=st=1649000580~exp=1649001180~hmac=d47afe18b1f4676cf57b4ce181f0d2ecdcf26b4cb15c9b841c545aec42cb9b81&w=740",
+      "reviews": " I belive dr redhead is the victim in this. He has treated me for depression also and NEVER has he done something like this. Come back to us as i need proper medical care. ",
+      "name": "Matt Cromwell",
+      "ratings": 5
+    },
+    {
+      "id": 3,
+      "picture": "https://img.freepik.com/free-photo/young-handsome-man-with-beard-isolated-keeping-arms-crossed-frontal-position_1368-132662.jpg?w=740",
+      "reviews": "Never had a complete physical with him,even though I asked. Rarely takes my pressure when I see him.",
+      "name": "Jason Knill",
+      "ratings": 4.5
+    },
+    {
+      "id": 4,
+      "picture": "https://img.freepik.com/free-photo/portrait-beautiful-young-woman-standing-grey-wall_231208-10760.jpg?t=st=1649000580~exp=1649001180~hmac=871fb0a0dc0ee676612a4b85693ef0c51068d294e5357839b548a6bf4727e736&w=740",
+      "reviews": "He is great with me and my husband and a great listener very pleased to have him as our family Doctor.Always on his freakin' phone to his kids even in the emerg. Doesn't listen to his patients.",
+      "name": "Taylor Waldon",
+      "ratings": 5
+    },
+    {
+      "id": 5,
+      "picture": "https://img.freepik.com/free-photo/portrait-cheerful-excited-tablet-user-wearing-eyeglasses_1262-18272.jpg?t=st=1649000580~exp=1649001180~hmac=b980df879ffb7b739c2929c18c60b1e3621c7590d70823aecc10c51166d57a3c&w=740",
+      "reviews": "A good doctor .caring and listens. ...great with kids.Great doctor. I agree with the previous positive comments about his care.",
+      "name": "Maruf Mohanty",
+      "ratings": 4.5
+    },
+    {
+      "id": 6,
+      "picture": "https://img.freepik.com/free-photo/young-woman-with-round-glasses-yellow-sweater_273609-7091.jpg?t=st=1649000580~exp=1649001180~hmac=9c15d92c7c03984584f0534e86dbe77f63105985d20550cf21eb048c56c04a90&w=740",
+      "reviews": "My husband could not have held Dr. Redhead in higher esteem. His knowledge and professionalism is second to none. We appreciated his genuine caring, empathetic demeanor as well during this difficult period for us.",
+      "name": "Michelle Ames",
+      "ratings": 4
+    }
+  ]

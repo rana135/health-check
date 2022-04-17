@@ -1,15 +1,32 @@
  /* Footer part start */
- footer{
-    background-color:rgba(100, 148, 237, 0.995);
-    height:auto;
-    width:auto;
-    text-align: center;
-    color:white;
-    position:sticky;
-    bottom:0;
-}
-.footvar{
-    font-size:18px;
+ .footer-container{
+    background-color: rgba(30, 39, 51, 0.8);
 }
 
+.footer-description{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+}
+.footer-description p{
+    color: white;
+    margin: 0
+}
+.copyright{
+    color: white;
+    text-align: center;
+}
+.pages a{
+    text-decoration: none;
+    color:white;
+    margin-left: 20px;
+    display: block;
+}
+.pages a:hover{
+    color:white;
+    text-decoration:underline;
+}
+.pages{
+    margin-left: 0.9rem;
+}
 
