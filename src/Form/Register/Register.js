@@ -2,8 +2,9 @@ import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import GoogleLogo from '../../images/google.svg'
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 
 
 const Register = () => {
@@ -16,18 +17,27 @@ const Register = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
 
-
-      if (error) {
-        return (
-          <div>
-            <p>Error: {error.message}</p>
-          </div>
+    let errorELement;
+    if (error || error1) {
+        errorELement= (
+            <div>
+                <p>Error: {error?.message}{error1?.message}</p>
+            </div>
         );
-      }
+    }
 
-    const handleRegister = (event) =>{
+    if (user || user1) {
+        navigate('/home')
+    }
+
+    if(loading || loading1){
+        return <Loading></Loading>
+    }
+
+    const handleRegister = (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.stopPropagation();
@@ -36,12 +46,12 @@ const Register = () => {
         event.preventDefault();
 
         const email = emailRef.current.value;
-        const password= passwordRef.current.value;
+        const password = passwordRef.current.value;
         createUserWithEmailAndPassword(email, password)
         console.log(email, password);
     }
 
-    const navigateLogin = () =>{
+    const navigateLogin = () => {
         navigate("/login")
     }
     return (
@@ -64,11 +74,12 @@ const Register = () => {
                     Register
                 </Button>
             </Form>
-           <div className='m-4'>
-           <p className='text-center mt-2'>Already have an account? <span onClick ={navigateLogin}className='text-primary'>Please login</span></p>
-           </div>
+            {errorELement}
+            <div className='m-4'>
+                <p className='text-center mt-2'>Already have an account? <span onClick={navigateLogin} className='text-primary'>Please login</span></p>
+            </div>
             <div className='input-wrapper'>
-                <button className='google-auth'>
+                <button onClick={()=> signInWithGoogle()} className='google-auth'>
                     <img src={GoogleLogo} alt='' />
                     <p> Continue with Google </p>
                 </button>
