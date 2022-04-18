@@ -6,9 +6,9 @@ const ServiceDetails = () => {
     const [show, setShow] = useState(true);
     const {serviceId} = useParams();
     return (
-        <div className='text-center p-5'>
+        <div className='text-center p-5 shadow-lg rounded-3'>
             <Alert show={show} variant="success">
-        <Alert.Heading>Do you really want to book it?!</Alert.Heading>
+        <Alert.Heading className='fs-1'>Do you really want to book it?!</Alert.Heading>
         <h2 className='text-center mt-3'>Product id:{serviceId}</h2>
             <div className='text-center'></div>
         <p>
