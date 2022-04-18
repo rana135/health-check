@@ -25,7 +25,7 @@ const CheckOut = () => {
                 <textarea className="form-control rounded-3" id="exampleFormControlTextarea1" rows="7" placeholder='Message'></textarea>
             </div>
             <div className='d-flex justify-content-center mt-3'>
-            <button type="button" class="btn btn-primary btn-lg">Send request</button>
+            <button type="button" className="btn btn-primary btn-lg">Send request</button>
             </div>
         </div>
     );

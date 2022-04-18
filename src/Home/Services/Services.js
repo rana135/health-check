@@ -10,15 +10,19 @@ const Services = () => {
         .then(data => setServices(data))
     },[])
     return (
-        <div className='services container'>
+        <div>
+            <h1 style={{marginTop:"6.5rem"}} className='text-center'>Fitness Store</h1>
+            <div className='container services'>
             {
                 services.map(service => <Service
                 key={service.id}
                 service={service}
                 ></Service>)
             }
+            </div>
         </div>
     );
 };
 
 export default Services;
+
