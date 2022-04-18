@@ -2,11 +2,11 @@ import React, { useRef, useState } from 'react';
 import { Button, Form} from 'react-bootstrap';
 import './Login.css';
 import GoogleLogo from '../../images/google.svg'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.init';
 import Loading from '../../Shared/Loading/Loading';
-import { sendPasswordResetEmail } from 'firebase/auth';
+import { sendEmailVerification, sendPasswordResetEmail } from 'firebase/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,6 +15,8 @@ const Login = () => {
   const emailRef = useRef('')
   const passwordRef = useRef('')
   const navigate = useNavigate();
+  let location = useLocation();
+   let from = location.state?.from?.pathname || "/";
   const [
     signInWithEmailAndPassword,
     user,
@@ -37,14 +39,14 @@ const Login = () => {
   }
 
   if (user || user1) {
-    navigate('/home')
+    navigate(from, { replace: true });
   }
 
   if (loading || loading1) {
     return <Loading></Loading>
   }
 
-  const handleLogin = (event) => {
+  const handleLogin =async (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.stopPropagation();
@@ -56,7 +58,6 @@ const Login = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     signInWithEmailAndPassword(email, password)
-    console.log(email, password);
   }
 
   const navigateRegister = () => {

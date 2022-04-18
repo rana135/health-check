@@ -2,9 +2,11 @@ import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import GoogleLogo from '../../images/google.svg'
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
@@ -21,9 +23,12 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
     const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+
+    
     let errorELement;
-    if (error || error1) {
+    if (error || error1 || updateError) {
         errorELement= (
             <div>
                 <p>Error: {error?.message}{error1?.message}</p>
@@ -39,7 +44,7 @@ const Register = () => {
         return <Loading></Loading>
     }
 
-    const handleRegister = (event) => {
+    const handleRegister =async (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.stopPropagation();
@@ -51,8 +56,8 @@ const Register = () => {
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        createUserWithEmailAndPassword(email, password)
-        console.log(email, password);
+        await createUserWithEmailAndPassword(email, password)
+        await updateProfile({ displayName:name });
     }
 
     const navigateLogin = () => {
@@ -94,6 +99,7 @@ const Register = () => {
                     <p> Continue with Google </p>
                 </button>
             </div>
+            <ToastContainer />
         </div>
     );
 };
