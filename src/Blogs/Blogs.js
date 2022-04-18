@@ -19,7 +19,7 @@ const Blogs = () => {
                     <Accordion.Body>
                         <h3 className='text-primary'>Reason for use:-</h3>
                         Firebase is used for many purposes that can help your apps to develop, grow and make it a quality app. 
-                        <h3 className='text-primary'>Firebase Alternatives Options:-</h3>
+                        <h3 className='text-primary'>Firebase authentication Alternatives Options:-</h3>
                         STYTCH, Ory, Supabase, Okta, PingIdentity, Keycloak, Frontegg, Authress, Auth0, Amazon Cognito, OneLogin etc.
                     </Accordion.Body>
                 </Accordion.Item>

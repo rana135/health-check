@@ -32,7 +32,7 @@ const Login = () => {
   if (error || error1 || sending) {
     errorElement = (
       <div>
-        <p>Error: {error.message}</p>
+        <p>Error: {error?.message}{error1?.message}{sending?.message}</p>
       </div>
     );
   }
@@ -99,7 +99,7 @@ const Login = () => {
       </Form>
       {errorElement}
       <div className='m-4'>
-        <p className='text-center mt-2'>New to Genius Car? <span onClick={navigateRegister} className='text-primary'>Please Register</span></p>
+        <p className='text-center mt-2'>New to Health Coach? <span onClick={navigateRegister} className='text-primary'>Please Register</span></p>
         <p className='text-center mt-2'>Forget Password? <span onClick={resetPassword} className='text-primary'>Reset Password</span></p>
       </div>
       <div className='input-wrapper'>

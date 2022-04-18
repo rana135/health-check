@@ -8,14 +8,12 @@ const About = () => {
     return (
         <div className='container'>
             <div className='text-center m-5'>
-                <img className='w-50 mx-auto' src={profile} alt="" />
+                <img className='w-25 mx-auto' src={profile} alt="" />
             </div>
-            <h1 className='text-center'>Ashley Graff</h1>
-            <h6 className='m-3 text-center'>My name is Ashley Graff, I am 35 years old. I am a Personal Health Coach</h6>
+            <h1 className='text-center'>Rana Hossain Shimul</h1>
+            <h6 className='m-3 text-center'>My nickname is Shimul, I am 21 years old. I am a full stack web developer</h6>
 
-            <p className='text-center'>How to develop yourself more in the future. Bring something better as a gift for people, which will be something good for their health</p>
-
-            <p>Ashley Graff is one of the most famous fitness models worldwide. Thanks to her balanced physique and incredible definition she has been featured in many popular magazines, TV shows, commercials and music videos. As a certified personal coach and natural yoga trainer she helped thousands to transform their body. With EAST MODE she developed a 90 days transformation program which is based on more than 10 years’ experience as a fitness model and life coach.</p>
+            <p>As a Web developer, I want to be able to design Web pages that can effectively display material, provide interactivity, and be artistically pleasing to the user.Another goal is to make sure users of the website have a good experience.In next 6 month i want to learn SEO ,that's why developing sites that are optimized for search engine ranking, and ensuring that websites are properly coded and functional.</p>
             <div>
                 <div className='mt-5 mb-5'>
                     <h1 className='text-center m-5 fs-1'>Certificates</h1>
