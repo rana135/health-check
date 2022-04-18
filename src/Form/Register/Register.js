@@ -52,7 +52,6 @@ const Register = () => {
         setValidated(true);
         event.preventDefault();
 
-
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
@@ -66,19 +65,28 @@ const Register = () => {
     return (
         <div className='w-50 mx-auto border p-5 m-5 rounded-3'>
             <h1 className='text-center text-primary'>Register</h1>
-            <Form onSubmit={handleRegister}>
+            <Form noValidate validated={validated} onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
                     <Form.Control ref={nameRef} type="text" placeholder="Enter Name" required />
+                    <Form.Control.Feedback type="invalid">
+            Please provide a valid name.
+          </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+                    <Form.Control.Feedback type="invalid">
+            Please provide a valid email.
+          </Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
+                    <Form.Control.Feedback type="invalid">
+            Please provide a valid password.
+          </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check onClick={()=> setAgree(!agree)} type="checkbox" label="Accept Genius Car Terms And Conditions" className={agree? "text-primary" : "text-danger"}/>
