@@ -5,6 +5,8 @@
     margin-bottom: 5.8rem;
 }   
 
+
+
 @media (min-width: 320px) and (max-width: 480px) {
     .services{
         display: grid;

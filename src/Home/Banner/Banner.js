@@ -15,8 +15,8 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                    <h1 className='text-white'>Hi, I'm Asley Graff!</h1>
-                        <h5 className='text-white'>Your new Personal Coach for better life!</h5>
+                    <h1 className='text-white  m-0 justify-content-start'>Hi, I'm Asley Graff!</h1>
+                    <h5 className='text-white '>Your new Personal Coach for better life!</h5>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>

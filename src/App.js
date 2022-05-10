@@ -18,10 +18,10 @@ function App() {
   return (
     <div>
       <Header></Header>
-       <Routes>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/service/:serviceId" element={<ServiceDetails/>} />
+        <Route path="/service/:serviceId" element={<ServiceDetails />} />
         <Route path="/checkOut" element={
           <RequireAuth>
             <CheckOut />
@@ -31,11 +31,11 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/about" element={<About/>} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer></Footer>
-    </div>
+    </div >
   );
 }
 

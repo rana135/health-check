@@ -5,7 +5,7 @@ import GoogleLogo from '../../images/google.svg'
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.init';
 import Loading from '../../Shared/Loading/Loading';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -21,15 +21,15 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
-    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [updateProfile, updateError] = useUpdateProfile(auth);
 
 
-    
+
     let errorELement;
     if (error || error1 || updateError) {
-        errorELement= (
+        errorELement = (
             <div>
                 <p>Error: {error?.message}{error1?.message}</p>
             </div>
@@ -40,11 +40,11 @@ const Register = () => {
         navigate('/home')
     }
 
-    if(loading || loading1){
+    if (loading || loading1) {
         return <Loading></Loading>
     }
 
-    const handleRegister =async (event) => {
+    const handleRegister = async (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.stopPropagation();
@@ -56,7 +56,7 @@ const Register = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await createUserWithEmailAndPassword(email, password)
-        await updateProfile({ displayName:name });
+        await updateProfile({ displayName: name });
     }
 
     const navigateLogin = () => {
@@ -70,30 +70,30 @@ const Register = () => {
                     <Form.Label>Your Name</Form.Label>
                     <Form.Control ref={nameRef} type="text" placeholder="Enter Name" required />
                     <Form.Control.Feedback type="invalid">
-            Please provide a valid name.
-          </Form.Control.Feedback>
+                        Please provide a valid name.
+                    </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
                     <Form.Control.Feedback type="invalid">
-            Please provide a valid email.
-          </Form.Control.Feedback>
+                        Please provide a valid email.
+                    </Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                     <Form.Control.Feedback type="invalid">
-            Please provide a valid password.
-          </Form.Control.Feedback>
+                        Please provide a valid password.
+                    </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check onClick={()=> setAgree(!agree)} type="checkbox" label="Accept Genius Car Terms And Conditions" className={agree? "text-primary" : "text-danger"}/>
+                    <Form.Check onClick={() => setAgree(!agree)} type="checkbox" label="Accept Genius Car Terms And Conditions" className={agree ? "text-primary" : "text-danger"} />
                 </Form.Group>
                 <Button
-                disabled = {!agree}
-                style={{ height: "60px" }} className='btn btn-lg mx-auto d-block w-100' variant="primary" type="submit">
+                    disabled={!agree}
+                    style={{ height: "60px" }} className='btn btn-lg mx-auto d-block w-100' variant="primary" type="submit">
                     Register
                 </Button>
             </Form>
@@ -102,7 +102,7 @@ const Register = () => {
                 <p className='text-center mt-2'>Already have an account? <span onClick={navigateLogin} className='text-primary'>Please login</span></p>
             </div>
             <div className='input-wrapper'>
-                <button onClick={()=> signInWithGoogle()} className='google-auth'>
+                <button onClick={() => signInWithGoogle()} className='google-auth'>
                     <img src={GoogleLogo} alt='' />
                     <p> Continue with Google </p>
                 </button>
