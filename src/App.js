@@ -13,6 +13,7 @@ import Register from './Form/Register/Register';
 import ServiceDetails from './ServiceDetails/ServiceDetails';
 import RequireAuth from './RequireAuth/RequireAuth';
 import CheckOut from './CheckOut/CheckOut';
+import ScrollToTop from 'react-scroll-to-top';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer></Footer>
+      <ScrollToTop smooth/>
     </div >
   );
 }

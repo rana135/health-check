@@ -2,8 +2,7 @@ import React from 'react';
 import './Service.css';
 
 const Service = ({ service }) => {
-    const { _id, img, name, price, description } = service;
-
+    const { img, name, price, description } = service;
     return (
         <div className='service-container' data-aos="flip-left"
         data-aos-easing="ease-out-cubic"

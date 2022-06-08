@@ -7,6 +7,7 @@ import banner3 from '../../images/banner/banner3.webp'
 const Banner = () => {
     return (
         <div>
+
             <Carousel>
                 <Carousel.Item>
                     <img style={{maxHeight:"600px"}}
