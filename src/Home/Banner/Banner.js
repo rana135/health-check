@@ -1,50 +1,23 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
 import banner1 from '../../images/banner/banner1.webp'
-import banner2 from '../../images/banner/banner2.webp'
-import banner3 from '../../images/banner/banner3.webp'
+import Typed from 'react-typed';
 
 const Banner = () => {
     return (
         <div>
-
-            <Carousel>
-                <Carousel.Item>
-                    <img style={{maxHeight:"600px"}}
-                        className="d-block w-100"
-                        src={banner1}
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                    <h1 className='text-white  m-0 justify-content-start'>Hi, I'm Asley Graff!</h1>
-                    <h5 className='text-white '>Your new Personal Coach for better life!</h5>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img style={{maxHeight:"600px"}}
-                        className="d-block w-100"
-                        src={banner2}
-                        alt="Second slide"
-                    />
-
-                    <Carousel.Caption>
-                    <h1 className='text-white'>Hi, I'm Asley Graff!</h1>
-                        <h5 className='text-white'>Your new Personal Coach for better life!</h5>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img style={{maxHeight:"600px"}}
-                        className="d-block w-100"
-                        src={banner3}
-                        alt="Third slide"
-                    />
-
-                    <Carousel.Caption>
-                    <h1 className='text-secondary'>Hi, I'm Asley Graff!</h1>
-                        <h5 className='text-secondary'>Your new Personal Coach for better life!</h5>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
+            <div>
+                <div className="d-flex container" style={{ marginTop: "10%" }}>
+                    <img data-aos="fade-right" data-aos-duration="3000" src={banner1} alt='' style={{ borderRadius: "10%" }} className="w-50" />
+                    <div style={{ marginTop: "7%", marginLeft: "5rem" }} data-aos="fade-right" data-aos-duration="3000">
+                        <h1 style={{ fontSize: "45px" }} className="fw-bold text-succed">
+                            inspiring you to live a healthier 
+                            <span className='text-danger'> lifestyle</span>
+                        </h1>
+                        <p className="mt-3">We offer excellent value by providing quality work at an affordable price. We offer superior pricing, unmatched in the industry. Please contact us to discuss your facilities, volumes of work, specific needs to procure a quote on our pricing.</p>
+                        <button className='btn btn-primary btn-lg rounded-3'>CONTACT US</button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
