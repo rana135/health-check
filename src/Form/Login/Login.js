@@ -75,7 +75,7 @@ const Login = () => {
 
   }
   return (
-    <div className='w-50 mx-auto border p-5 m-5 rounded-3'>
+    <div className='col-lg-6 col-md-8 col-sm-12 col-12 mx-auto border p-5 m-5 rounded-3'>
       <h1 className='text-center text-primary'>Login</h1>
       <Form noValidate validated={validated} onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">

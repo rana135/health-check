@@ -1,15 +1,15 @@
 import React from 'react';
 import banner1 from '../../images/banner/banner1.webp'
-import Typed from 'react-typed';
+import './banner.css'
 
 const Banner = () => {
     return (
         <div>
             <div>
-                <div className="d-flex container" style={{ marginTop: "10%" }}>
-                    <img data-aos="fade-right" data-aos-duration="3000" src={banner1} alt='' style={{ borderRadius: "10%" }} className="w-50" />
-                    <div style={{ marginTop: "7%", marginLeft: "5rem" }} data-aos="fade-right" data-aos-duration="3000">
-                        <h1 style={{ fontSize: "45px" }} className="fw-bold text-succed">
+                <div className="banner container" style={{ marginTop: "10%" }}>
+                    <img data-aos="fade-right" data-aos-duration="3000" src={banner1} alt='' style={{ borderRadius: "10%" }} className="w-75" />
+                    <div style={{ marginTop: "12%"}} data-aos="fade-right" data-aos-duration="3000">
+                        <h1 className="fw-bold text-succed banner-title">
                             inspiring you to live a healthier 
                             <span className='text-danger'> lifestyle</span>
                         </h1>

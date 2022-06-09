@@ -1,0 +1,19 @@
+.banner{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.banner-title{
+    font-size: 45px;
+}
+@media only screen and (max-width:600px){
+    .banner{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .banner img{
+        margin-left: 3rem;
+    }
+    .banner-title{
+        font-size: x-large;
+    }
+}
