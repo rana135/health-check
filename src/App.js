@@ -14,6 +14,9 @@ import RequireAuth from './RequireAuth/RequireAuth';
 import CheckOut from './CheckOut/CheckOut';
 import ScrollToTop from 'react-scroll-to-top';
 import WorkFlow from './WorkFlow/WorkFlow';
+import AddProduct from './AddProduct/AddProduct';
+import ManageProducts from './ManageProduct/ManageProducts';
+import EditProduct from './EditProduct/EditProduct';
 
 function App() {
   return (
@@ -22,13 +25,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/service/:serviceId" element={<ServiceDetails />} />
+        <Route path="/product/:serviceId" element={<ServiceDetails />} />
         <Route path="/checkOut" element={
           <RequireAuth>
             <CheckOut />
           </RequireAuth>
         } />
         <Route path="/review" element={<Reviews />} />
+        <Route path="/addProduct" element={<AddProduct />} />
+        <Route path="/manageProducts" element={<ManageProducts />} />
+        <Route path="/editProducts/:id" element={<EditProduct />} />
         <Route path="/workFlow" element={<WorkFlow />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
