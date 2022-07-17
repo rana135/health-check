@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import addProduct from '../images/addProduct.webp'
 import './AddProduct.css'
+import { toast } from 'react-toastify';
 
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -14,9 +15,12 @@ const AddProduct = () => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(data => {
-                console.log(data);
+            .then(result => {
+                console.log(result);
                 reset()
+                if (result) {
+                    toast.success('Product Add Successfully')
+                }
             })
     };
     return (

@@ -64,7 +64,7 @@ const Register = () => {
     }
     return (
         <div className='col-lg-6 col-md-8 col-sm-12 col-12 mx-auto border p-5 m-5 rounded-3'>
-            <h1 className='text-center text-primary'>Register</h1>
+            <h1 className='text-center' style={{color:"#003f91"}}>Register</h1>
             <Form noValidate validated={validated} onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
@@ -93,7 +93,7 @@ const Register = () => {
                 </Form.Group>
                 <Button
                     disabled={!agree}
-                    style={{ height: "60px" }} className='btn btn-lg mx-auto d-block w-100' variant="primary" type="submit">
+                    style={{ height: "60px",background:"#0353a4" }} className='btn btn-lg mx-auto d-block w-100' type="submit">
                     Register
                 </Button>
             </Form>

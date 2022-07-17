@@ -24,7 +24,7 @@ const Courses = () => {
         <div>
             <div className='text-center mt-5'>
                 <h1 className='fs-1 fw-bolder'>Here Is Some Of Our <br />
-                    <span className='text-danger'>Latest Cases</span></h1>
+                    <span style={{color:"#003f91"}}>Latest Cases</span></h1>
             </div>
             <div className=' swiper-wrapper'>
                 <>

@@ -9,7 +9,7 @@ const Review = (props) => {
                 <div className='client-reviews'>
                     <img src={picture} alt='' />
                     <div className='review-details'>
-                        <h4>{name}</h4>
+                        <h4 style={{color:"#003f91"}}>{name}</h4>
                         <h6>Ratings: {ratings}</h6>
                     </div>
                 </div>

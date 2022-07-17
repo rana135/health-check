@@ -1,11 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-import addProduct from '../images/addProduct.webp'
+import editProduct from '../images/edit.webp'
+import { toast } from 'react-toastify';
 
 
 
-const AddProduct = () => {
+const EditProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const { id } = useParams()
     const onSubmit = async data => {
@@ -17,16 +18,19 @@ const AddProduct = () => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(data => {
-                console.log(data);
+            .then(result => {
+                console.log(result);
                 reset()
+                if (result) {
+                    toast.success('Product Edit Successfully')
+                }
             })
     };
     return (
         <div>
             <div className='add-product-container d-flex col-lg-12 col-md-12 col-12 col-sm-12 mx-auto' style={{ marginTop: "50px" }}>
                 <div className='text-center col-lg-8'>
-                    <img className='w-75 h-100 rounded-3' src={addProduct} alt="" />
+                    <img className='w-75 h-100 rounded-3' src={editProduct} alt="" />
                 </div>
                 <div className='text-center add-product'>
                     <form onSubmit={handleSubmit(onSubmit)}>
@@ -100,7 +104,7 @@ const AddProduct = () => {
                                 {errors.img?.type === 'required' && <span className="label-text text-danger">{errors.img?.message}</span>}
                             </label>
                         </div>
-                        <input className='btn btn-outline-primary w-100 fw-bolder' type="submit" value='Add Product' />
+                        <input className='btn btn-outline-primary w-100 fw-bolder' type="submit" value='Edit Product' />
                     </form>
                 </div>
             </div>
@@ -108,4 +112,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default EditProduct;

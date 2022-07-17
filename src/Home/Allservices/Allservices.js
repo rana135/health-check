@@ -53,7 +53,7 @@ const Allservices = () => {
     return (
         <div>
             <div className='text-center my-5'>
-                <h3 className='text-primary fw-bold'>Our Services  </h3>
+                <h3 className='fw-bold' style={{color:"#003f91"}}>Our Services  </h3>
                 <h1>Services We Provide</h1>
             </div>
             <div className='allServices-container container gap-4'>

@@ -18,7 +18,7 @@ const Medicine = () => {
     <div>
       <div>
         <Fade top>
-          <h2 className="text-center mb-4">Your <span className="text-danger">Medicine</span></h2>
+          <h2 className="text-center mb-5 mt-5">Your <span style={{color:"#003f91"}}>Medicine</span></h2>
         </Fade>
         <Slider {...settings}>
           <div className="medicine">

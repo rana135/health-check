@@ -1,0 +1,86 @@
+[
+    {
+        "doctorName": "Dr. Sarah Johnson",
+        "dOfMedical": "Consulting Doctor",
+        "phone": "+800 852 45 64",
+        "mail": "sarahjohnson@ahc.com",
+        "img": "https://i.ibb.co/b1Yd3bn/doctor1.webp"
+    },
+    {
+        "doctorName": "Dr. Greg House",
+        "dOfMedical": "Dental Hygienist",
+        "phone": "+800 741 45 57",
+        "mail": "greghouse@ahc.com",
+        "img": "https://i.ibb.co/3pYhq9b/doctor8.webp"
+    },
+    {
+        "doctorName": "Dr. Marta Stewart",
+        "dOfMedical": "Pediatrician",
+        "phone": "+800 963 45 67",
+        "mail": "martastewart@ahc.com",
+        "img": "https://i.ibb.co/gtpQFNn/doctor2.webp"
+    },
+    {
+        "doctorName": "Dr. Night Shyamalan",
+        "dOfMedical": "Cardiac Surgeon",
+        "phone": "+800 258 45 65",
+        "mail": "nightshyamalan@ahc.com",
+        "img": "https://i.ibb.co/9TPnkSS/doctor9.webp"
+    },
+    {
+        "doctorName": "Dr. Khalid Abbed",
+        "dOfMedical": "Neurosurgery",
+        "phone": "+800 852 45 69",
+        "mail": "nareshtrehan@ahc.com",
+        "img": "https://i.ibb.co/3YZSMdv/doctor10.jpg"
+    },
+    {
+        "doctorName": "Dr. Naresh Trehan",
+        "dOfMedical": "Anesthesiologist",
+        "phone": "+800 452 45 68",
+        "mail": "khalidabbed@ahc.com",
+        "img": "https://i.ibb.co/z6Vk2Rk/doctor3.webp"
+    },
+    {
+        "doctorName": "Dr. Corrie T.M Anderson",
+        "dOfMedical": "Cardiovascular",
+        "phone": "+800 753 45 84",
+        "mail": "corrieanderson@ahc.com",
+        "img": "https://i.ibb.co/4TV5N6R/doctor12.webp"
+    },
+    {
+        "doctorName": "Dr. Mark. F. Aaron",
+        "dOfMedical": "Adenoidectomy",
+        "phone": "+800 951 45 66",
+        "mail": "markaaron@ahc.com",
+        "img": "https://i.ibb.co/R0MS0Q0/doctor11.webp"
+    },
+    {
+        "doctorName": "Antonia Novello",
+        "dOfMedical": "X-ray",
+        "phone": "+800 357 45 65",
+        "mail": "antonianovello@ahc.com",
+        "img": "https://i.ibb.co/JyphQwb/doctor4.webp"
+    },
+    {
+        "doctorName": "Susan Flesche",
+        "dOfMedical": "Pregnancy",
+        "phone": "+800 159 45 63",
+        "mail": "susanflesche@ahc.com",
+        "img": "https://i.ibb.co/3fSwvpH/doctor5.webp"
+    },
+    {
+        "doctorName": "Gertrude Belle",
+        "dOfMedical": "For disabled",
+        "phone": "+800 654 45 62",
+        "mail": "gertrudebelle@ahc.com",
+        "img": "https://i.ibb.co/mG1gTnH/doctor6.webp"
+    },
+    {
+        "doctorName": "Margaret Chung",
+        "dOfMedical": "NMR",
+        "phone": "+800 558 45 61",
+        "mail": "margaretchung@ahc.com",
+        "img": "https://i.ibb.co/pJHRmyF/doctor7.jpg"
+    }
+]

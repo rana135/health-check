@@ -76,7 +76,7 @@ const Login = () => {
   }
   return (
     <div className='col-lg-6 col-md-8 col-sm-12 col-12 mx-auto border p-5 m-5 rounded-3'>
-      <h1 className='text-center text-primary'>Login</h1>
+      <h1 className='text-center' style={{color:"#003f91"}}>Login</h1>
       <Form noValidate validated={validated} onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -93,19 +93,19 @@ const Login = () => {
             Please provide a valid password.
           </Form.Control.Feedback>
         </Form.Group>
-        <Button style={{ height: "60px" }} className='btn btn-lg mx-auto d-block w-100' variant="primary" type="submit">
+        <Button style={{ height: "60px", background:"#0353a4"}} className='btn btn-lg mx-auto d-block w-100' type="submit">
           Login
         </Button>
       </Form>
       {errorElement}
       <div className='m-4'>
-        <p className='text-center mt-2'>New to Health Coach? <span onClick={navigateRegister} className='text-primary'>Please Register</span></p>
-        <p className='text-center mt-2'>Forget Password? <span onClick={resetPassword} className='text-primary'>Reset Password</span></p>
+        <p className='text-center mt-2'>New to Health Coach? <span onClick={navigateRegister} style={{color:"#003f91"}}>Please Register</span></p>
+        <p className='text-center mt-2'>Forget Password? <span onClick={resetPassword} style={{color:"#003f91"}}>Reset Password</span></p>
       </div>
       <div className='input-wrapper'>
         <button onClick={() => signInWithGoogle()} className='google-auth'>
           <img src={GoogleLogo} alt='' />
-          <p> Continue with Google </p>
+          <p className='mt-3'> Continue with Google </p>
         </button>
       </div>
       <ToastContainer />

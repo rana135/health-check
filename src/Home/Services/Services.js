@@ -7,7 +7,7 @@ const Services = () => {
     const [products] = useProducts()
     return (
         <div>
-            <h1 style={{marginTop:"6.5rem"}} className='text-center'>Fitness Store</h1>
+            <h1 style={{marginTop:"6.5rem", color:"#003f91"}} className='text-center'>Fitness Store</h1>
             <div className='container services'>
             {
                 products.slice(0,6).map(service => <Service

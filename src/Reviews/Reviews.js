@@ -13,7 +13,7 @@ const Reviews = () => {
     return (
         <div>
             <div className='customer-reviews'>
-                <h1 style={{ textAlign: "center", fontSize: "45px" }}>Customer Reviews:</h1>
+                <h1 style={{ textAlign: "center", fontSize: "45px",color:"#003f91"}}>Customer Reviews</h1>
                 <div className='reviews-container'>
                     {
                         clientReviews.map(review => <Review

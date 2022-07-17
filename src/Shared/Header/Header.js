@@ -5,6 +5,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../Firebase.init';
 import Loading from '../Loading/Loading';
+import headerTitle from '../../images/Healthcheck.png'
+import './Header.css'
 
 const Header = () => {
     const [user, loading] = useAuthState(auth);
@@ -17,26 +19,28 @@ const Header = () => {
         return <Loading></Loading>
     }
     return (
-        <Navbar collapseOnSelect expand="lg" sticky='top' bg="primary" variant="dark " className='d-flex align-items-center'>
+        <Navbar collapseOnSelect expand="lg" sticky='top' className='d-flex align-items-center navbarbg' style={{background:"white"}}>
             <Container>
                 <Navbar.Brand>
-                    <Link to="/"><h1 className='text-white'>Health Check</h1></Link>
+                    <Link to='/home' class="nav-link active" aria-current="page" >
+                        <img src={headerTitle} alt="" />
+                    </Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link as={Link} to="home">home</Nav.Link>
-                        <Nav.Link as={Link} to="workFlow">Workflow</Nav.Link>
-                        <Nav.Link as={Link} to="review">Review</Nav.Link>
-                        <Nav.Link as={Link} to="addProduct">Add Product</Nav.Link>
-                        <Nav.Link as={Link} to="manageProducts">Manage Product</Nav.Link>
+                    <Nav className="me-auto" >
+                        <Nav.Link className='fw-bolder' style={{color:"#003f91"}} as={Link} to="home">home</Nav.Link>
+                        <Nav.Link className='fw-bolder' style={{color:"#003f91"}} as={Link} to="doctors" >Doctors</Nav.Link>
+                        <Nav.Link className='fw-bolder' style={{color:"#003f91"}} as={Link} to="review" >Review</Nav.Link>
+                        <Nav.Link className='fw-bolder' style={{color:"#003f91"}} as={Link} to="addProduct" >Add Product</Nav.Link>
+                        <Nav.Link className='fw-bolder' style={{color:"#003f91"}} as={Link} to="manageProducts" >Manage Product</Nav.Link>
+                        <Nav.Link className='fw-bolder' style={{color:"#003f91"}} as={Link} to="about" >About</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link as={Link} to="about">About</Nav.Link>
                         {user ?
-                            <button onClick={() => handleSignOut()} className='btn btn-primary'>Sign Out</button>
+                            <button onClick={() => handleSignOut()} className='btn text-white' style={{background:"#0353a4"}}>Sign Out</button>
                             :
-                            <Nav.Link as={Link} to="login">
+                            <Nav.Link className='fw-bolder' as={Link} to="login" style={{color:"#003f91"}}>
                                 Login
                             </Nav.Link>}
                     </Nav>
