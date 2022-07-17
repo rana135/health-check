@@ -1,0 +1,38 @@
+.services{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    margin-bottom: 5.8rem;
+}   
+.service{
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px;
+}
+.service:hover{
+    transform: scale(1.1);
+    transition: .5s;
+ }
+
+.service img{
+    width: 100%;
+}
+.service button {
+    width:100%;
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .services{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+    .services{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+        margin-top: 8.1rem;
+    }   
+}

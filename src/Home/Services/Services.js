@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useProducts from '../../Hooks/useProducts';
 import Service from '../Home/Service/Service';
 import './Services.css';
 
 const Services = () => {
-    const [services, setServices] = useState([])
-    useEffect(()=>{
-        fetch("http://localhost:5000/product")
-        .then(res => res.json())
-        .then(data => setServices(data))
-    },[])
+    const [products] = useProducts()
     return (
         <div>
             <h1 style={{marginTop:"6.5rem"}} className='text-center'>Fitness Store</h1>
             <div className='container services'>
             {
-                services.slice(0,6).map(service => <Service
+                products.slice(0,6).map(service => <Service
                 key={service.id}
                 service={service}
                 ></Service>)

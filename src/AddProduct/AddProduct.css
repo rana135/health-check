@@ -1,0 +1,16 @@
+.add-product {
+    -webkit-box-shadow: 3px 4px 8px 0px #000000;
+    box-shadow: 3px 4px 8px 0px #000000;
+    padding: 35px;
+}
+
+@media only screen and (max-width:600px) {
+    .add-product-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .add-product input{
+        width: 100%;
+    }
+}
