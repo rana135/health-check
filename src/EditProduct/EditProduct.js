@@ -10,7 +10,7 @@ const EditProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const { id } = useParams()
     const onSubmit = async data => {
-        fetch(`http://localhost:5000/editProduct/${id}`, {
+        fetch(`https://powerful-springs-25358.herokuapp.com/editProduct/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

@@ -8,7 +8,7 @@ const ServiceDetails = () => {
   const { serviceId } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${serviceId}`)
+    fetch(`https://powerful-springs-25358.herokuapp.com/product/${serviceId}`)
       .then(res => res.json())
       .then(data => setserviceDetails(data))
   }, [serviceDetails]);
@@ -18,7 +18,7 @@ const ServiceDetails = () => {
       <Alert show={show} variant="success">
         <Alert.Heading className='fs-1'>Do you really want to book it?!</Alert.Heading>
         <h2 className='text-center mt-3'>Product id:{serviceId}</h2>
-        
+
         <div className='text-center'></div>
         <p>
           Then submit your details by clicking on the button below. I hope you will get the desired product very soon.

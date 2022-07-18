@@ -5,15 +5,15 @@ import DoctorsCard from "./../DoctorsCard/DoctorsCard";
 const Doctors = () => {
     const [allDoctors, setAllDoctors] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/doctors")
+        fetch("https://powerful-springs-25358.herokuapp.com/doctors")
             .then((res) => res.json())
             .then((data) => setAllDoctors(data));
     }, []);
     return (
         <div>
             <div className="mb-5 doctors-img custom-margin">
-                <h1 className="pt-3 ps-5" style={{color:"#003f91"}}>Our Doctors</h1>
-                <h4 className="pt-1 ps-5" style={{color:"#003f91"}}>Home / Doctors</h4>
+                <h1 className="pt-3 ps-5" style={{ color: "#003f91" }}>Our Doctors</h1>
+                <h4 className="pt-1 ps-5" style={{ color: "#003f91" }}>Home / Doctors</h4>
             </div>
 
 

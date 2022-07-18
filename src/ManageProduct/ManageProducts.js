@@ -12,7 +12,7 @@ const ManageProducts = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm("Are You Sure?")
         if (proceed) {
-            fetch(`http://localhost:5000/productDelete/${id}`, {
+            fetch(`https://powerful-springs-25358.herokuapp.com/productDelete/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
