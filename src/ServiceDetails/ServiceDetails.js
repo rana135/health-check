@@ -8,7 +8,7 @@ const ServiceDetails = () => {
   const { serviceId } = useParams();
 
   useEffect(() => {
-    fetch(`https://powerful-springs-25358.herokuapp.com/product/${serviceId}`)
+    fetch(`https://health-check-backend.vercel.app/product/${serviceId}`)
       .then(res => res.json())
       .then(data => setserviceDetails(data))
   }, [serviceDetails]);

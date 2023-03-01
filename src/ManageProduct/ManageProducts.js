@@ -12,7 +12,7 @@ const ManageProducts = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm("Are You Sure?")
         if (proceed) {
-            fetch(`https://powerful-springs-25358.herokuapp.com/productDelete/${id}`, {
+            fetch(`https://health-check-backend.vercel.app/productDelete/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())

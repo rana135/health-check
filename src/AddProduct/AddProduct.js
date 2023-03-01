@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const onSubmit = async data => {
-        fetch("https://powerful-springs-25358.herokuapp.com/addProduct", {
+        fetch("https://health-check-backend.vercel.app/addProduct", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

@@ -5,7 +5,7 @@ import DoctorsCard from "./../DoctorsCard/DoctorsCard";
 const Doctors = () => {
     const [allDoctors, setAllDoctors] = useState([]);
     useEffect(() => {
-        fetch("https://powerful-springs-25358.herokuapp.com/doctors")
+        fetch("https://health-check-backend.vercel.app/doctors")
             .then((res) => res.json())
             .then((data) => setAllDoctors(data));
     }, []);
