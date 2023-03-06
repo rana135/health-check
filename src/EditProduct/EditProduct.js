@@ -1,28 +1,44 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import editProduct from '../images/edit.webp'
 import { toast } from 'react-toastify';
+import { signOut } from 'firebase/auth';
+import auth from '../Firebase.init';
 
 
 
 const EditProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const { id } = useParams()
+    const Navigate = useNavigate();
+
+
     const onSubmit = async data => {
         fetch(`https://health-check-backend.vercel.app/editProduct/${id}`, {
             method: "PUT",
             headers: {
-                "content-type": "application/json"
+                "content-type": "application/json",
+                "authorization": `Bearer ${localStorage.getItem("accessToken")}`
             },
             body: JSON.stringify(data)
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    signOut(auth);
+                    localStorage.removeItem("accessToken");
+                    Navigate("/")
+                }
+                return res.json();
+            })
             .then(result => {
                 console.log(result);
-                reset()
-                if (result) {
-                    toast.success('Product Edit Successfully')
+                if (result.modifiedCount) {
+                    toast.success('Product Edit Successfully');
+                    reset();
+                }
+                else {
+                    toast.error('Failed to Edit product');
                 }
             })
     };

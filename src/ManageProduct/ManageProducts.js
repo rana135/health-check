@@ -1,27 +1,63 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useProducts from '../Hooks/useProducts';
 import './ManageProducts.css'
 import { toast } from 'react-toastify';
+import { signOut } from 'firebase/auth';
+import auth from '../Firebase.init';
 
 
 const ManageProducts = () => {
-    const [products, setProduct] = useProducts()
+    // const [products, setProduct] = useProducts()
     const navigate = useNavigate()
+
+    const [products, setProduct] = useState([])
+
+    useEffect(() => {
+        fetch("https://health-check-backend.vercel.app/product", {
+            method: "GET",
+            headers: {
+                "authorization": `Bearer ${localStorage.getItem("accessToken")}`,
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    signOut(auth)
+                    localStorage.removeItem("accessToken")
+                    navigate('/')
+                }
+                return res.json()
+            })
+            .then(data => setProduct(data))
+    }, [])
 
     const handleDelete = (id) => {
         const proceed = window.confirm("Are You Sure?")
         if (proceed) {
             fetch(`https://health-check-backend.vercel.app/productDelete/${id}`, {
-                method: "DELETE"
+                method: "DELETE",
+                headers: {
+                    "authorization": `Bearer ${localStorage.getItem("accessToken")}`,
+                }
             })
-                .then(res => res.json())
+                .then(res => {
+                    console.log(res, "res");
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth)
+                        localStorage.removeItem("accessToken")
+                        navigate('/')
+                    }
+                    return res.json()
+                })
                 .then(data => {
                     console.log(data);
-                    if (data) {
+                    if (data.deletedCount) {
                         const remaining = products.filter(p => p._id !== id)
                         setProduct(remaining)
                         toast.success("Product Delete Successfully")
+                    }
+                    else {
+                        toast.error("Product Delete Failed")
                     }
                 })
         }

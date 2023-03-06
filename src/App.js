@@ -13,7 +13,6 @@ import ServiceDetails from './ServiceDetails/ServiceDetails';
 import RequireAuth from './RequireAuth/RequireAuth';
 import CheckOut from './CheckOut/CheckOut';
 import ScrollToTop from 'react-scroll-to-top';
-import WorkFlow from './WorkFlow/WorkFlow';
 import AddProduct from './AddProduct/AddProduct';
 import ManageProducts from './ManageProduct/ManageProducts';
 import EditProduct from './EditProduct/EditProduct';
@@ -33,8 +32,16 @@ function App() {
           </RequireAuth>
         } />
         <Route path="/review" element={<Reviews />} />
-        <Route path="/addProduct" element={<AddProduct />} />
-        <Route path="/manageProducts" element={<ManageProducts />} />
+        <Route path="/addProduct" element={
+          <RequireAuth>
+            <AddProduct />
+          </RequireAuth>
+        } />
+        <Route path="/manageProducts" element={
+          <RequireAuth>
+            <ManageProducts />
+          </RequireAuth>
+        } />
         <Route path="/editProducts/:id" element={<EditProduct />} />
         <Route path="/doctors" element={<Doctors />} />
         <Route path="/register" element={<Register />} />
@@ -44,7 +51,7 @@ function App() {
       </Routes>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
-      <ScrollToTop smooth/>
+      <ScrollToTop smooth />
     </div >
   );
 }

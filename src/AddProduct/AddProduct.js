@@ -3,26 +3,42 @@ import { useForm } from 'react-hook-form';
 import addProduct from '../images/addProduct.webp'
 import './AddProduct.css'
 import { toast } from 'react-toastify';
+import auth from '../Firebase.init';
+import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 const AddProduct = () => {
+    const navigate = useNavigate();
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const onSubmit = async data => {
         fetch("https://health-check-backend.vercel.app/addProduct", {
             method: "POST",
             headers: {
-                "content-type": "application/json"
+                'content-type': 'application/json',
+                "authorization": `Bearer ${localStorage.getItem("accessToken")}`
             },
             body: JSON.stringify(data)
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    signOut(auth);
+                    localStorage.removeItem("accessToken");
+                    navigate("/")
+                }
+                return res.json();
+            })
             .then(result => {
                 console.log(result);
-                reset()
-                if (result) {
+                if (result.insertedId) {
                     toast.success('Product Add Successfully')
+                    reset()
+                }
+                else {
+                    toast.error('Failed to Add product');
                 }
             })
     };
+
     return (
         <div>
             <div className='add-product-container d-flex col-lg-12 col-md-12 col-12 col-sm-12 mx-auto' style={{ marginTop: "50px" }}>

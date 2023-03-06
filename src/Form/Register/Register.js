@@ -7,6 +7,7 @@ import auth from '../../Firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useToken from '../../Hooks/useToken';
 
 
 const Register = () => {
@@ -22,10 +23,10 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-    const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, gUser, loading1, error1] = useSignInWithGoogle(auth);
     const [updateProfile, updateError] = useUpdateProfile(auth);
 
-
+    const [token] = useToken(user || gUser)
 
     let errorELement;
     if (error || error1 || updateError) {
@@ -36,7 +37,7 @@ const Register = () => {
         );
     }
 
-    if (user || user1) {
+    if (user || gUser) {
         navigate('/home')
     }
 
@@ -64,7 +65,7 @@ const Register = () => {
     }
     return (
         <div className='col-lg-6 col-md-8 col-sm-12 col-12 mx-auto border p-5 m-5 rounded-3'>
-            <h1 className='text-center' style={{color:"#003f91"}}>Register</h1>
+            <h1 className='text-center' style={{ color: "#003f91" }}>Register</h1>
             <Form noValidate validated={validated} onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
@@ -93,7 +94,7 @@ const Register = () => {
                 </Form.Group>
                 <Button
                     disabled={!agree}
-                    style={{ height: "60px",background:"#0353a4" }} className='btn btn-lg mx-auto d-block w-100' type="submit">
+                    style={{ height: "60px", background: "#0353a4" }} className='btn btn-lg mx-auto d-block w-100' type="submit">
                     Register
                 </Button>
             </Form>
